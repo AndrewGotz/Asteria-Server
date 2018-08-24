@@ -46,7 +46,7 @@ public final class PluginHandler {
      */
     public void init() {
         try {
-            Class<?> c = Class.forName("plugins.plugin.PluginBootstrap");
+            Class<?> c = Class.forName("plugin.PluginBootstrap");
             Constructor<?> bootstrap = c.getConstructor(Logger.class);
             bootstrap.newInstance(logger);
         } catch (Exception e) {

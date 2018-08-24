@@ -1,7 +1,7 @@
 package com.asteria.net.message.impl;
 
-import plugins.plugin.skills.prayer.Bone;
-import plugins.plugin.skills.prayer.PrayerBoneBury;
+import plugin.skills.prayer.Bone;
+import plugin.skills.prayer.PrayerBoneBury;
 
 import com.asteria.game.World;
 import com.asteria.game.character.player.Player;

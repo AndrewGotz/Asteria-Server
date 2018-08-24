@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
-import plugins.plugin.minigames.fightcaves.FightCavesHandler;
+import plugin.minigames.fightcaves.FightCavesHandler;
 
 import com.asteria.game.character.CharacterList;
 import com.asteria.game.character.CharacterNode;

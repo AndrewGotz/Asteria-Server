@@ -10,8 +10,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import plugins.plugin.minigames.fightcaves.FightCavesHandler;
-import plugins.plugin.skills.cooking.CookingData;
+import plugin.minigames.fightcaves.FightCavesHandler;
+import plugin.skills.cooking.CookingData;
 
 import com.asteria.game.GameConstants;
 import com.asteria.game.NodeType;

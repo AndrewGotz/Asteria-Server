@@ -119,5 +119,10 @@ public abstract class HarvestingSkillAction extends SkillAction {
      */
     public abstract Optional<Item[]> removeItems();
 
-    public abstract <P> P harvestItems();
+    /**
+     * The items to be harvested upon a successful harvest.
+     *
+     * @return the items to be harvested.
+     */
+    public abstract Item[] harvestItems();
 }
