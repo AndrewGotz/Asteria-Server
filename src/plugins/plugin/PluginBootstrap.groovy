@@ -32,7 +32,7 @@ final class PluginBootstrap {
     }
 
     static def provide() {
-        List<Class<?>> listeners = init "./bin/plugin/"
+        List<Class<?>> listeners = init "C:\\Users\\Andrew Gotzon\\Desktop\\Asteria\\Asteria-Server\\src\\plugins\\plugin\\skills\\mining\\Mining.groovy"
         listeners.each { World.plugins.submit it }
     }
 
@@ -48,7 +48,7 @@ final class PluginBootstrap {
                             return FileVisitResult.CONTINUE
                         String formatted = file.path.replace(File.separator, ".").substring(0, file.path.lastIndexOf(".")).replace("bin.", "").replace("..", "")
 
-                        Class<?> c = Class.forName(formatted)
+                        Class<?> c = Class.forName(file.path)
                         c.interfaces.each {
                             if(it == PluginListener.class && c.getAnnotation(PluginSignature.class) == null)
                                 throw new PluginSignatureException(c)

@@ -61,8 +61,6 @@ public enum SkillData {
      *            the second line that level up text will be printed on.
      * @param chatbox
      *            the chatbox interface displayed on level up.
-     * @param index
-     *            the index in the skill event array.
      */
     private SkillData(int id, int firstLine, int secondLine, int chatbox) {
         this.id = id;
