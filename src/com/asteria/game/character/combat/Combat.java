@@ -9,9 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-import plugins.plugin.combat.DefaultMagicCombatStrategy;
-import plugins.plugin.combat.DefaultMeleeCombatStrategy;
-import plugins.plugin.combat.DefaultRangedCombatStrategy;
+import plugin.combat.DefaultMagicCombatStrategy;
+import plugin.combat.DefaultMeleeCombatStrategy;
+import plugin.combat.DefaultRangedCombatStrategy;
 
 import com.asteria.Server;
 import com.asteria.game.NodeType;
