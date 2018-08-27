@@ -11,6 +11,8 @@ import com.asteria.game.location.Position
 import com.asteria.game.plugin.PluginListener
 import com.asteria.game.plugin.PluginSignature
 import com.asteria.game.plugin.context.ObjectFirstClickPlugin
+import plugin.skills.woodcutting.WCTool
+import plugin.skills.woodcutting.Woodcutting
 
 @PluginSignature(ObjectFirstClickPlugin.class)
 final class ObjectFirstClick implements PluginListener<ObjectFirstClickPlugin> {
@@ -55,6 +57,10 @@ final class ObjectFirstClick implements PluginListener<ObjectFirstClickPlugin> {
             case 3193:
             case 2213:
                 player.bank.open()
+                break
+            case 1278:
+                Woodcutting wood = new Woodcutting(player, 1278)
+                wood.start()
                 break
             case 409:
                 int level = player.skills[Skills.PRAYER].realLevel

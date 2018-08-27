@@ -5,7 +5,12 @@ import com.google.common.collect.ImmutableSet
 
 enum Choppable {
 
-    LOGS(1511, 1, 0.85, 10),
+    LOGS(1511, 1, 0.85, 10) {
+        @Override
+        boolean choppable(Player player) {
+
+        }
+    },
     OAK,
     WILLOW,
     MAPLE
@@ -15,6 +20,7 @@ enum Choppable {
     final int level
     final double chance
     final double experience
+    final int treeId
 
     Choppable(int id, int level, double chance, double experience) {
         this.id = id

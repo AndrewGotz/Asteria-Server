@@ -13,21 +13,22 @@ import plugin.skills.fishing.Tool
 
 import java.util.concurrent.ThreadLocalRandom
 
-import static com.asteria.game.character.player.skill.Skills.FISHING
+import static com.asteria.game.character.player.skill.Skills.WOODCUTTING
 
 class Woodcutting extends HarvestingSkillAction {
 
-    private def Tool tool
     private final ThreadLocalRandom random = ThreadLocalRandom.current()
+    private WCTool tool
+    private int treeId
 
-    Woodcutting(Player player, Tool tool, Position position) {
-        super(player, Optional.of(position))
-        this.tool = tool
+    Woodcutting(Player player, int treeId) {
+        super(player)
+        this.treeId = treeId
     }
 
     @Override
     boolean canExecute() {
-        if (!checkFishing() || random.nextInt(50) == 0)
+        if (!checkWoodcutting() || random.nextInt(50) == 0)
             return false
         return true
     }
@@ -35,23 +36,23 @@ class Woodcutting extends HarvestingSkillAction {
     @Override
     void onHarvest(Task t, Item item, boolean success) {
         if (success) {
-            Catchable c = Catchable.getCatchable(item.id)
+            Catchable c = Choppable.getChoppable(item.id)
             Skills.experience(player, c.experience, skill().id)
         }
     }
 
     @Override
     boolean init() {
-        if (!checkFishing())
+        if (!checkWoodcutting())
             return false
-        player.messages.sendMessage "You begin to fish..."
-        player.animation new Animation(tool.animation)
+        player.messages.sendMessage "You begin to chop..."
+        player.animation new Animation(875 )
         return true
     }
 
     @Override
     Item[] harvestItems() {
-        tool.onCatch(player)
+        tool.onHarvest(player)
     }
 
     @Override
@@ -61,7 +62,7 @@ class Woodcutting extends HarvestingSkillAction {
 
     @Override
     Optional<Animation> animation() {
-        Optional.of(new Animation(tool.animation))
+        return new Animation(875)
     }
 
     @Override
@@ -83,7 +84,7 @@ class Woodcutting extends HarvestingSkillAction {
 
     @Override
     SkillData skill() {
-        SkillData.FISHING
+        SkillData.WOODCUTTING
     }
 
     @Override
@@ -91,23 +92,17 @@ class Woodcutting extends HarvestingSkillAction {
         player.animation null
     }
 
-    private boolean checkFishing() {
-        if (!player.inventory.contains(tool.id)) {
-            player.messages.sendMessage "You need a ${tool} to fish here!"
+    private boolean checkWoodcutting() {
+        if (!player.inventory.contains(tool.id) || !player.weapon) {
+            player.messages.sendMessage "You need a hatchet to cut a tree!"
             return false
-        }
-        if (tool.needed > 0) {
-            if (!player.inventory.contains(tool.needed)) {
-                player.messages.sendMessage "You do not have enough bait."
-                return false
-            }
         }
         if (player.inventory.remaining() < 1) {
             player.messages.sendMessage "You do not have any space left in your inventory."
             return false
         }
-        if (!player.skills[FISHING].reqLevel(tool.level)) {
-            player.messages.sendMessage "You must have a Fishing level of ${tool.level} to use this tool."
+        if (!player.skills[WOODCUTTING].reqLevel(tool.level) || !player.skills[]) {
+            player.messages.sendMessage "You must have a woodcutting level of ${tool.level} to use this tool."
             return false
         }
         return true
