@@ -135,7 +135,8 @@ final class Commands implements PluginListener<CommandPlugin> {
                     player.messages.sendMusic id
                     break
                 case "item":
-                    String item = cmd[1].replaceAll("_", " ")
+                    player.inventory.add(new Item(1351, 1))
+                   /* String item = cmd[1].replaceAll("_", " ")
                     int amount = Integer.parseInt cmd[2]
                     player.messages.sendMessage "Searching..."
                     int occurances = 0
@@ -165,6 +166,7 @@ final class Commands implements PluginListener<CommandPlugin> {
                     if (addedToBank) {
                         player.messages.sendMessage bankCount + " items were banked due to lack of inventory space!"
                     }
+                    break*/
                     break
                 case "interface":
                     player.messages.sendInterface Integer.parseInt(cmd[1])

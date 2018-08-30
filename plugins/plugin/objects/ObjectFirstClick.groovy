@@ -11,12 +11,17 @@ import com.asteria.game.location.Position
 import com.asteria.game.plugin.PluginListener
 import com.asteria.game.plugin.PluginSignature
 import com.asteria.game.plugin.context.ObjectFirstClickPlugin
+import plugin.skills.woodcutting.WCTools
+import plugin.skills.woodcutting.Woodcutting
 
 @PluginSignature(ObjectFirstClickPlugin.class)
 final class ObjectFirstClick implements PluginListener<ObjectFirstClickPlugin> {
 
+
     @Override
     void execute(Player player, ObjectFirstClickPlugin context) {
+        int id = context.id
+        Position position = context.position.copy()
         switch (context.id) {
             case 9391:
                 player.viewingOrb = new ViewingOrb(player, new Position(2398, 5150),
@@ -73,6 +78,19 @@ final class ObjectFirstClick implements PluginListener<ObjectFirstClickPlugin> {
                 } else if (player.spellbook == Spellbook.NORMAL) {
                     Spellbook.convert(player, Spellbook.ANCIENT)
                 }
+                break
+            //Woodcutting junk.
+            case 1276:
+                Woodcutting wood = new Woodcutting(player, WCTools.BHATCHET, 1276, position)
+                wood.start()
+                break
+            case 1281:
+                Woodcutting wood = new Woodcutting(player, WCTools.BHATCHET, 1281, position)
+                wood.start()
+                break
+            case 1278:
+                Woodcutting wood = new Woodcutting(player, WCTools.BHATCHET, id, position)
+                wood.start()
                 break
         }
     }
