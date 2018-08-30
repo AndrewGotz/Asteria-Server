@@ -5,6 +5,7 @@ import com.asteria.game.character.player.skill.Skill
 import com.asteria.game.character.player.skill.Skills
 import com.asteria.game.item.Item
 import com.asteria.utility.RandomGen
+import plugin.skills.SkillsUtils
 import plugin.skills.fishing.Catchable
 
 enum WCTools {
@@ -22,19 +23,12 @@ enum WCTools {
         this.success = success
     }
 
-    Choppable calculate(Player player, int treeId) {
-        Skill skill = player.skills[Skills.WOODCUTTING]
-        for(Choppable c : Choppable.values()) {
-            for(int i = 0; i < c.treeIdList.size(); i++) {
-                if(c.treeIdList[i] == treeId && skill.reqLevel(c.level) ) {
-                    return c
-                }
-            }
-        }
-        return null
-    }
-
     Item[] onChop(Player player, int treeId) {
-        [new Item(calculate(player, treeId).id)] as Item[]
+        try {
+            return [new Item(Woodcutting.getTree(player, treeId).id)] as Item[]
+        } catch (Exception e) {
+            System.out.print("Failure to woodcut")
+            return new Item(0, 0)
+        }
     }
 }

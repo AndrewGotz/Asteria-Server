@@ -1,4 +1,4 @@
-package plugin.skills.woodcutting
+package plugin.skills
 
 import com.asteria.game.character.player.Player
 

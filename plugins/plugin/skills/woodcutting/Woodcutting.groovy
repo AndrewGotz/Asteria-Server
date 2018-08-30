@@ -11,11 +11,10 @@ import com.asteria.game.item.Item
 import com.asteria.game.location.Position
 import com.asteria.game.plugin.PluginSignature
 import com.asteria.task.Task
-import plugin.skills.fishing.Catchable
+import plugin.skills.SkillsUtils
 
 import java.util.concurrent.ThreadLocalRandom
 
-import static com.asteria.game.character.player.skill.Skills.FISHING
 import static com.asteria.game.character.player.skill.Skills.WOODCUTTING
 
 @PluginSignature(SkillAction.class)
@@ -71,6 +70,11 @@ class Woodcutting extends HarvestingSkillAction {
     }
 
     @Override
+    Optional<Animation> animation() {
+        Optional.of(new Animation(879))
+    }
+
+    @Override
     boolean instant() {
         false
     }
@@ -91,15 +95,35 @@ class Woodcutting extends HarvestingSkillAction {
     }
 
     private boolean checkWoodcutting() {
-        if (!player.inventory.contains(wcTool.id)) {
-            player.messages.sendMessage "You nedd a ${wcTool} to cut here!"
+        if (!player.inventory.contains(wcTool.id) && !player.equipment.contains(wcTool.id)) {
+            player.messages.sendMessage "You need a ${wcTool} to cut here!"
             return false
         }
+        int treeLevel = getTree(player, treeId).level
+        if(!player.skills[WOODCUTTING].reqLevel(treeLevel)) {
+            player.messages.sendMessage "You must have a woodcutting level of ${treeLevel} to chop this."
+            return false
+        }
+
         SkillsUtils.checkInv(player)
+
         if (!player.skills[WOODCUTTING].reqLevel(wcTool.level)) {
             player.messages.sendMessage "You must have a Fishing level of ${wcTool.level} to use this tool."
             return false
         }
+
         return true
+    }
+
+    static Choppable getTree(Player player, int treeId) {
+        Skill skill = player.skills[WOODCUTTING]
+        for(Choppable c : Choppable.values()) {
+            for(int i = 0; i < c.treeIdList.size(); i++) {
+                if(c.treeIdList[i] == treeId) {
+                    return c
+                }
+            }
+        }
+        return null
     }
 }

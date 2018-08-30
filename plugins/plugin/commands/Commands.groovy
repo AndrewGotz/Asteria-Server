@@ -113,6 +113,11 @@ final class Commands implements PluginListener<CommandPlugin> {
                         Skills.experience(player, (Integer.MAX_VALUE - player.skills[it].experience), it)
                     }
                     break
+                case "slave":
+                    player.skills.length.times {
+                        Skills.experience(player, 1, it)
+                    }
+                    break
                 case "tele":
                     int x = Integer.parseInt cmd[1]
                     int y = Integer.parseInt cmd[2]

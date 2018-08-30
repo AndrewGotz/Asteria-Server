@@ -2,8 +2,8 @@
   "username": "zerutule",
   "password": "androx24425",
   "position": {
-    "x": 3092,
-    "y": 3245,
+    "x": 3093,
+    "y": 3244,
     "z": 0
   },
   "rights": "DEVELOPER",
@@ -336,7 +336,7 @@
   ],
   "friends": [],
   "ignores": [],
-  "run-energy": 98,
+  "run-energy": 100,
   "spellbook": "NORMAL",
   "account-banned": false,
   "auto-retaliate": false,
@@ -363,7 +363,7 @@
       "realLevel": 99
     },
     {
-      "level": 14,
+      "level": 15,
       "experience": 2.0E8,
       "realLevel": 99
     },
