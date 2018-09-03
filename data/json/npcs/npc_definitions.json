@@ -34280,7 +34280,7 @@
     "name": "Ice wolf",
     "examine": "Not man's best friend.",
     "combat": 96,
-    "size": 2,
+    "size": 5,
     "attackable": true,
     "aggressive": false,
     "retreats": false,

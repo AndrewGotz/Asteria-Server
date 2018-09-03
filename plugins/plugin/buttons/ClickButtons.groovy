@@ -41,8 +41,8 @@ final class ClickButtons implements PluginListener<ButtonClickPlugin> {
                     player.viewingOrb.move("Centre", 15239, player.viewingOrb.getCentre())
                 break
             case 59136:
-                if (player.viewingOrb != null)
-                    player.viewingOrb.move("North-West", 15240, player.viewingOrb.getNorthWest())
+                if (player.viewingOrb != null)9
+                    player.viewingOrb.move("North-West", 15240, player.viewingOrb.getNorthWest())8
                 break
             case 59137:
                 if (player.viewingOrb != null)
@@ -84,7 +84,7 @@ final class ClickButtons implements PluginListener<ButtonClickPlugin> {
                 break
             case 50235:
             case 4140:
-                player.teleport new Position(3094, 3243)
+                player.teleport new Position(2964, 3378)
                 break
             case 21233:
                 CombatPrayer.THICK_SKIN.activate(player, true)

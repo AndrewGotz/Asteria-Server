@@ -28,5 +28,25 @@
     },
     "random-walk": true,
     "walk-radius": 1
+  },
+  {
+    "id": 1599,
+    "position": {
+      "x": 2961,
+      "y": 3398,
+      "z": 0
+    },
+    "random-walk": true,
+    "walk-radius": 1
+  },
+  {
+    "id": 1558,
+    "position": {
+      "x": 2982,
+      "y": 3403,
+      "z": 0
+    },
+    "random-walk": false,
+    "walk-radius": 0
   }
 ]

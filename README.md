@@ -15,7 +15,6 @@ Please check out the successor to this project [Luna](https://github.com/lare96/
 
 Everything below will be added to my new project [Luna](https://github.com/lare96/luna). I will no longer be doing any major overhauls on this repository, but I will still be fixing any basic issues that come up. Treat my new project as if it was Asteria 4.0, because it's goal is to correct everything I did wrong with this release.
 
-- Maven to manage dependencies *
 - JUnit for unit testing *
 - Log4j2 for usage as the logging framework *
 - Log file for serious errors (in conjunction with log4j2) *

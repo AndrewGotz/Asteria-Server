@@ -18,5 +18,66 @@
     },
     "direction": "EAST",
     "type": "DEFAULT"
+  },
+  {
+    "id": 2091,
+    "position": {
+      "x":  2971,
+      "y": 3400,
+      "z": 0
+    },
+    "direction": "EAST",
+    "type": "DEFAULT"
+  },
+  {
+    "id": 2091,
+    "position": {
+      "x":  2973,
+      "y": 3402,
+      "z": 0
+    },
+    "direction": "EAST",
+    "type": "DEFAULT"
+  },
+  {
+    "id": 2095,
+    "position": {
+      "x":  2973,
+      "y": 3398,
+      "z": 0
+    },
+    "direction": "EAST",
+    "type": "DEFAULT"
+  },
+  {
+    "id": 2095,
+    "position": {
+      "x":  2971,
+      "y": 3403,
+      "z": 0
+    },
+    "direction": "EAST",
+    "type": "DEFAULT"
+  },
+  {
+    "id": 2095,
+    "position": {
+      "x":  2976,
+      "y": 3401,
+      "z": 0
+    },
+    "direction": "EAST",
+    "type": "DEFAULT"
+  },
+  {
+    "id": 2,
+    "position": {
+      "x":  2957,
+      "y": 3398,
+      "z": 0
+    },
+    "direction": "SOUTH",
+    "type": "DEFAULT"
   }
+
 ]

@@ -95,7 +95,7 @@ public final class Npc extends CharacterNode {
     }
 
     @Override
-    public void sequence() throws Exception {
+    public void sequence() {
         movementCoordinator.sequence();
     }
 

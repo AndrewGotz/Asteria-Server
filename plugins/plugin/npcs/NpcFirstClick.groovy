@@ -30,7 +30,7 @@ final class NpcFirstClick implements PluginListener<NpcFirstClickPlugin> {
                 player.dialogueChain.append new NpcDialogue(id, "Would you like some money?")
                 player.dialogueChain.append new OptionDialogue(["Yes please!", "No thanks."]) {
                     @Override
-                    public Optional<Consumer<OptionType>> getOptionListener() {
+                    Optional<Consumer<OptionType>> getOptionListener() {
                         return Optional
                                 .of(new Consumer<OptionType>() {
                                     @Override
@@ -52,11 +52,11 @@ final class NpcFirstClick implements PluginListener<NpcFirstClickPlugin> {
                 player.dialogueChain.append new NpcDialogue(id, "Greetings, would you like to be taken to the", "fight pits minigame?")
                 player.dialogueChain.append new OptionDialogue(["Yes, take me!", "I'd rather not."]) {
                     @Override
-                    public Optional<Consumer<OptionType>> getOptionListener() {
+                    Optional<Consumer<OptionType>> getOptionListener() {
                         return Optional
                                 .of(new Consumer<OptionType>() {
                                     @Override
-                                    public void accept(OptionType t) {
+                                    void accept(OptionType t) {
                                         if (t == OptionType.FIRST_OPTION) {
                                             player.move FightCavesHandler.DEATH_POSITION
                                         } else if (t == OptionType.SECOND_OPTION) {
