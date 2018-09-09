@@ -140,7 +140,7 @@ final class Commands implements PluginListener<CommandPlugin> {
                     player.messages.sendMusic id
                     break
                 case "item":
-                    player.inventory.add(new Item(1351, 1))
+                    player.inventory.add(new Item(1265, 1))
                    /* String item = cmd[1].replaceAll("_", " ")
                     int amount = Integer.parseInt cmd[2]
                     player.messages.sendMessage "Searching..."

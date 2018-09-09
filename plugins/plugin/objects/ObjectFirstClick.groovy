@@ -11,6 +11,9 @@ import com.asteria.game.location.Position
 import com.asteria.game.plugin.PluginListener
 import com.asteria.game.plugin.PluginSignature
 import com.asteria.game.plugin.context.ObjectFirstClickPlugin
+import plugin.skills.SkillsUtils
+import plugin.skills.mining.Mining
+import plugin.skills.mining.MiningTools
 import plugin.skills.woodcutting.WCTools
 import plugin.skills.woodcutting.Woodcutting
 
@@ -89,8 +92,14 @@ final class ObjectFirstClick implements PluginListener<ObjectFirstClickPlugin> {
                 wood.start()
                 break
             case 1278:
+
                 Woodcutting wood = new Woodcutting(player, WCTools.BHATCHET, id, position)
                 wood.start()
+                break
+            //Mining junk
+            case 2091:
+                Mining mine = new Mining(player, SkillsUtils.checkMiningTools(player), id, position)
+                mine.start()
                 break
         }
     }
