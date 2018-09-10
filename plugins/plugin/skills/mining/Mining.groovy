@@ -12,7 +12,6 @@ import com.asteria.game.location.Position
 import com.asteria.game.plugin.PluginSignature
 import com.asteria.task.Task
 import plugin.skills.SkillsUtils
-import plugin.skills.woodcutting.Choppable
 
 import java.util.concurrent.ThreadLocalRandom
 
@@ -101,7 +100,7 @@ class Mining extends HarvestingSkillAction {
         }
         int oreLevel = getOre(player, oreId).level
         if(!player.skills[MINING].reqLevel(oreLevel)) {
-            player.messages.sendMessage "You must have a woodcutting level of ${oreLevel} to chop this."
+            player.messages.sendMessage "You must have a mining level of ${oreLevel} to mine this."
             return false
         }
 

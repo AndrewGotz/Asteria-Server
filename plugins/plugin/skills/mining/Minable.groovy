@@ -4,8 +4,8 @@ import com.google.common.collect.ImmutableSet
 
 enum Minable {
 
-    COPPER(436, 1, 0.85, 45,2091),
-    TIN(438, 15, 0.75, 50,1 ),
+    COPPER(436, 1, 0.50, 45,2091),
+    TIN(438, 1, 0.50, 50,2095 ),
     IRON(440, 15, 0.75, 50, 1),
     MITHRIL(447, 15, 0.75, 50, 1),
     ADAMANT(450, 15, 0.75, 50, 1),

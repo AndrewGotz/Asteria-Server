@@ -141,6 +141,10 @@ final class Commands implements PluginListener<CommandPlugin> {
                     break
                 case "item":
                     player.inventory.add(new Item(1265, 1))
+                    player.inventory.add(new Item(1267, 1))
+                    player.inventory.add(new Item(1273, 1))
+                    player.inventory.add(new Item(1271, 1))
+                    player.inventory.add(new Item(1275, 1))
                    /* String item = cmd[1].replaceAll("_", " ")
                     int amount = Integer.parseInt cmd[2]
                     player.messages.sendMessage "Searching..."

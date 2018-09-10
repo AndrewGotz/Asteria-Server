@@ -60,6 +60,9 @@ final class ObjectFirstClick implements PluginListener<ObjectFirstClickPlugin> {
                     FightCavesHandler.awaiting.each { FightCavesHandler.display it }
                 }
                 break
+            case 11758:
+                player.bank.open()
+                break
             case 3193:
             case 2213:
                 player.bank.open()
@@ -92,7 +95,6 @@ final class ObjectFirstClick implements PluginListener<ObjectFirstClickPlugin> {
                 wood.start()
                 break
             case 1278:
-
                 Woodcutting wood = new Woodcutting(player, WCTools.BHATCHET, id, position)
                 wood.start()
                 break
@@ -101,6 +103,11 @@ final class ObjectFirstClick implements PluginListener<ObjectFirstClickPlugin> {
                 Mining mine = new Mining(player, SkillsUtils.checkMiningTools(player), id, position)
                 mine.start()
                 break
+            case 2095:
+                Mining mine = new Mining(player, SkillsUtils.checkMiningTools(player), id, position)
+                mine.start()
+                break
+
         }
     }
 }

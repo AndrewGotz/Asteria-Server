@@ -3,11 +3,14 @@ package plugin.skills.mining
 import com.asteria.game.character.player.Player
 import com.asteria.game.item.Item
 import com.asteria.utility.RandomGen
-import plugin.skills.woodcutting.Woodcutting
 
 enum MiningTools {
 
-    BPICKAXE(1265, 1, 0.30)
+    BPICKAXE(1265, 1, 0.10),
+    IRONPICKAXE(1267, 10, 0.15),
+    MITHRILPICKAXE(1273, 20, 0.25),
+    ADAMANTPICKAXE(1271, 30, 0.30),
+    RUNEPICKAXE(1275, 40, 0.85),
 
     final int id
     final int level
@@ -24,7 +27,7 @@ enum MiningTools {
         try {
             return [new Item(Mining.getOre(player, oreId).id)] as Item[]
         } catch (Exception e) {
-            System.out.print("Failure to woodcut")
+            System.out.print("Failure to mine")
             return new Item(0, 0)
         }
     }
